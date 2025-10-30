@@ -70,3 +70,12 @@ db: ## Run PostgreSQL in Docker
 		-e POSTGRES_PASSWORD=postgres \
 		-v postgresql:/var/lib/postgresql/data \
 		postgres:alpine
+
+.PHONY: test
+test:
+	nosetests
+
+.PHONY: lint  
+lint:
+	flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
+	flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
