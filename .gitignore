@@ -16,6 +16,8 @@ unittests.xml
 db/*
 !db/.keep
 
+myenv
+
 # SonarQube Reports
 .scannerwork/
 .sonarlint/
